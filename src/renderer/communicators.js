@@ -5,7 +5,7 @@ import {Reservation} from "./communicators/reservation";
 
 var ipc = null;
 
-angular.module("communicator")
+angular.module("communicators")
 .factory("ipc", function() {
 	ipc = require("ipc");
 	
