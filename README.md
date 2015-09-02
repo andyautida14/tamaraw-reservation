@@ -6,9 +6,9 @@ This project just serves as a try for me in using [Electron](https://www.electro
 
 ## Usage
 ### Requirements
-This project requires [Electron](https://www.electron.atom.io) installed globally. To install:
+This project requires gulp installed globally. To install:
 ```
-npm install electron-prebuilt -g
+npm install gulp -g
 ```
 
 ### Getting a copy
@@ -26,7 +26,7 @@ npm install
 
 ### Execution
 ```
-electron .
+gulp
 ```
 
 ## License

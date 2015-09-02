@@ -14,7 +14,7 @@ app.on('window-all-closed', function() {
 		if (process.platform != 'darwin') {
 			app.quit();
 		}
-});
+});//
 
 app.on('ready', function() {
 	mainWindow = new BrowserWindow({width: 800, height: 600});
@@ -22,7 +22,7 @@ app.on('ready', function() {
 	models = require(__dirname + '/models.js');
 	
 	listeners.listen(ipc, models);
-	mainWindow.loadUrl('file://' + __dirname + '/../index.html');
+	mainWindow.loadUrl('file://' + __dirname + '/index.html');
 
 	// Open the devtools.
 	// mainWindow.openDevTools();

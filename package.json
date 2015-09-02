@@ -1,4 +1,24 @@
 {
   "name": "reservation-system",
-  "version": "0.1.0"
+  "version": "0.1.0",
+  "devDependencies": {
+    "babel": "^5.8.23",
+    "browser-sync": "^2.8.2",
+    "del": "^2.0.0",
+    "electron-prebuilt": "^0.31.2",
+    "gulp": "^3.9.0",
+    "gulp-babel": "^5.2.1",
+    "gulp-if": "^1.2.5",
+    "run-sequence": "^1.1.2",
+    "vinyl-paths": "^2.0.0",
+    "xtend": "^4.0.0"
+  },
+  "dependencies": {
+    "angular": "^1.4.5",
+    "angular-ui-grid": "^3.0.5",
+    "angular-ui-router": "^0.2.15",
+    "bootstrap": "^3.3.5",
+    "mysql": "^2.9.0",
+    "sequelize": "^3.6.0"
+  }
 }

@@ -1,13 +1,5 @@
 {
-  "name": "reservation-system-app",
-  "version": "0.1.0",
-  "main": "./main/main.js",
-  "dependencies": {
-    "angular": "^1.4.5",
-    "angular-ui-grid": "~3.0.5",
-    "angular-ui-router": "~0.2.15",
-    "bootstrap": "^3.3.5",
-    "mysql": "^2.9.0",
-    "sequelize": "^3.6.0"
-  }
+	"name": "tamaraw-reservation",
+	"version": "0.1.0",
+	"main": "main.js"
 }
