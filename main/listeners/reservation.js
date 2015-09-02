@@ -7,33 +7,33 @@ module.exports = (function(){
 				Reservation.count({
 					where: {tour_id: tour.id}
 				}).then(function(count) {
-					event.sender.send('tour-reservations-count', {
+					event.returnValue = {
 						tour_id: tour.id,
 						count: count
-					});
+					};
 				});
 			},
 			tourReservations: function(event, tour) {
 				Reservation.findAll({
 					where: {tour_id: tour.id}
 				}).then(function(reservations) {
-					event.sender.send('tour-reservations', {
+					event.returnValue = {
 						tour_id: tour.id,
 						reservations: reservations
-					});
+					};
 				});
 			},
 			reservationCreate: function(event, reservation) {
 				Reservation.create(reservation)
 				.then(function(res) {
-					event.sender.send('reservation-created', res);
-				})
+					event.returnValue = res;
+				});
 			},
 			reservationDelete: function(event, reservation) {
 				Reservation.destroy({
 					where: {id: reservation.id}
 				}).then(function() {
-					event.sender.send('reservation-deleted', reservation);
+					event.returnValue = reservation;
 				});
 			}
 		};

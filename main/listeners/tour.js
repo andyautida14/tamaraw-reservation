@@ -7,19 +7,19 @@ module.exports = (function(){
 				Tour.getAll({
 					order: [['for_date', 'ASC']]
 				}).then(function(tours) {
-					event.sender.send('all-tours', tours);
+					event.returnValue = tours;
 				});
 			},
 			createTour: function(event, tour) {
 				Tour.create(tour)
 				.then(function(new_tour) {
-					event.sender.send('tour-created', new_tour);
+					event.returnValue = new_tour;
 				});
 			},
 			deleteTour: function(event, tour) {
 				Tour.destroy({id: tour.id})
 				.then(function() {
-					event.sender.send('tour-destroyed', tour);
+					event.returnValue = tour;
 				});
 			}
 		};
