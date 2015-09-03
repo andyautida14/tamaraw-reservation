@@ -6,7 +6,6 @@ var app = require("app");
 var BrowserWindow = require("browser-window");
 var ipc = require("ipc");
 
-var electron = null;
 var mainWindow = null;
 var listeners = null;
 var models = null;
@@ -15,7 +14,7 @@ app.on('window-all-closed', function() {
 		if (process.platform != 'darwin') {
 			app.quit();
 		}
-});//
+});
 
 app.on('ready', function() {
 	mainWindow = new BrowserWindow({width: 800, height: 600});
@@ -24,9 +23,6 @@ app.on('ready', function() {
 	
 	listeners.listen(ipc, models);
 	mainWindow.loadUrl('file://' + __dirname + '/../index.html');
-	
-	electron = require("electron-connect").client;
-	client.create(mainWindow);
 
 	// Open the devtools.
 	mainWindow.openDevTools({detach: true});

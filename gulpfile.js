@@ -66,9 +66,6 @@ gulp.task("copy:deps", function() {
 		.pipe(gulp.dest(config.dest + "/node_modules"));
 });
 
-/**
- * TODO: Fix crash when importing electron-connect in main.js
- */
 gulp.task("serve", function() {
 	var opt = {
 		env: extend({NODE_ENV: 'development'}, process.env),
@@ -81,9 +78,18 @@ gulp.task("serve", function() {
 });
 
 gulp.task("watch", function() {
-	gulp.watch(config.html, ["copy:html"], electron.restart);
-	gulp.watch(config.scripts.js.renderer, electron.restart);
-	gulp.watch(config.scripts.js.main, electron.restart);
+	gulp.watch(config.static, function(event) {
+		runSequence("copy:static", "copy:deps", electron.restart);
+	});
+	gulp.watch(config.html, function(event) {
+		runSequence("copy:html", electron.restart);
+	});
+	gulp.watch(config.scripts.js.renderer, function(event) {
+		runSequence("copy:js:renderer", electron.restart)
+	});
+	gulp.watch(config.scripts.js.main, function(event) {
+		runSequence("copy:js:main", electron.restart);
+	});
 });
 
 gulp.task("default", function(callback) {
