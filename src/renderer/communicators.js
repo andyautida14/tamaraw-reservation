@@ -1,11 +1,11 @@
 'use strict';
 
-import {Tour} from "./communicators/tour";
-import {Reservation} from "./communicators/reservation";
+import {Tour} from "./renderer/communicators/tour.js";
+import {Reservation} from "./renderer/communicators/reservation.js";
 
 var ipc = null;
 
-angular.module("communicators")
+angular.module("communicators", [])
 .factory("ipc", function() {
 	ipc = require("ipc");
 	

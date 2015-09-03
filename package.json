@@ -5,6 +5,7 @@
     "babel": "^5.8.23",
     "browser-sync": "^2.8.2",
     "del": "^2.0.0",
+    "electron-connect": "^0.3.2",
     "electron-prebuilt": "^0.31.2",
     "gulp": "^3.9.0",
     "gulp-babel": "^5.2.1",

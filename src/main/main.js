@@ -1,11 +1,12 @@
 'use strict';
 
+require('crash-reporter').start();
+
 var app = require("app");
 var BrowserWindow = require("browser-window");
 var ipc = require("ipc");
 
-require('crash-reporter').start();
-
+var electron = null;
 var mainWindow = null;
 var listeners = null;
 var models = null;
@@ -22,10 +23,13 @@ app.on('ready', function() {
 	models = require(__dirname + '/models.js');
 	
 	listeners.listen(ipc, models);
-	mainWindow.loadUrl('file://' + __dirname + '/index.html');
+	mainWindow.loadUrl('file://' + __dirname + '/../index.html');
+	
+	electron = require("electron-connect").client;
+	client.create(mainWindow);
 
 	// Open the devtools.
-	// mainWindow.openDevTools();
+	mainWindow.openDevTools({detach: true});
 
 	// Emitted when the window is closed.
 	mainWindow.on('closed', function() {
