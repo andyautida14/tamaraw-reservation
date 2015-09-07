@@ -105,7 +105,11 @@ module.exports = function(sequelize, DataTypes) {
 				this.setDataValue("days", val);
 			}
 		}
-	}, {underscored: true});
+	}, {
+		timestamps: false,
+		freezeTableName: true,
+		underscored: true
+	});
 	
 	return reservation;
 }

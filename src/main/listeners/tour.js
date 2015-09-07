@@ -4,10 +4,12 @@ module.exports = (function(){
 	return function(Tour) {
 		var listener = {
 			getTours: function(event) {
-				Tour.getAll({
+				Tour.findAll({
 					order: [['for_date', 'ASC']]
 				}).then(function(tours) {
 					event.returnValue = tours;
+				}).catch(function(reason) {
+					console.log(reason);
 				});
 			},
 			createTour: function(event, tour) {

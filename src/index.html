@@ -1,18 +1,31 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="app">
 	<head>
 		<title>Hello World!</title>
 		<link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css" />
 		<link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap-theme.min.css" />
 	</head>
-	<body>
-		<h1>Yeeehaaa!</h1>
-		We are using io.js <script>document.write(process.version)</script>
-		and Electron <script>document.write(process.versions['electron'])</script>.
+	<body ng-controller="main">
+		<h1>Tours</h1>
+		<table class="table table-default">
+			<thead>
+				<tr>
+					<th>Name</th>
+					<th>Date</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="tour in tours">
+					<td>{{tour.name}}</td>
+					<td>{{tour.for_date}}</td>
+				</tr>
+			</tbody>
+		</table>
 		
 		<script src="node_modules/angular/angular.min.js"></script>
 		<script src="node_modules/angular-ui-router/build/angular-ui-router.min.js"></script>
 		<script src="renderer/communicators.js"></script>
 		<script src="renderer/app.js"></script>
+		<script src="renderer/main-ctrl.js"></script>
 	</body>
 </html>

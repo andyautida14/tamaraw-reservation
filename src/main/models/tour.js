@@ -36,6 +36,9 @@ module.exports = function(sequelize, DataTypes) {
 				this.setDataValue("deleted", val);
 			}
 		}
+	}, {
+		timestamps: false,
+		freezeTableName: true
 	});
 	
 	return tour;

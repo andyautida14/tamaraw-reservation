@@ -3,7 +3,7 @@
 module.exports = (function(){
 	var Sequelize = require('sequelize');
 	
-	var sequelize = new Sequelize("tamaraw", "root", {
+	var sequelize = new Sequelize("tamaraw", "root", "", {
 		dialect: "mariadb",
 		host: "localhost",
 		port: 3306
