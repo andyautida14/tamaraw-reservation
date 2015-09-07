@@ -21,6 +21,11 @@ git clone https://github.com/andyautida14/tamaraw-reservation.git
 ```
 cd /path/to/tamaraw-reservation/
 
+// install development tools
+npm install
+
+// install production tools
+cd src
 npm install
 ```
 
